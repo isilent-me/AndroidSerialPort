@@ -175,6 +175,15 @@ public class SerialPortManager extends SerialPort {
             mSendingHandlerThread = null;
         }
     }
+    long sleepTime=50;
+
+    /**
+     * 接收 sleep，默认是50ms
+     * @param sleepTime
+     */
+    public void setSleepTime(long sleepTime) {
+        this.sleepTime = sleepTime;
+    }
 
     /**
      * 开启接收消息的线程
@@ -188,7 +197,7 @@ public class SerialPortManager extends SerialPort {
                 }
             }
         };
-        mSerialPortReadThread.start();
+        mSerialPortReadThread.start(sleepTime);
     }
 
     /**

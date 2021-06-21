@@ -12,6 +12,8 @@ import java.io.InputStream;
 
 public abstract class SerialPortReadThread extends Thread {
 
+    private long sleepTime;
+
     public abstract void onDataReceived(byte[] bytes);
 
     private static final String TAG = SerialPortReadThread.class.getSimpleName();
@@ -46,7 +48,13 @@ public abstract class SerialPortReadThread extends Thread {
 
                 // Log.i(TAG, "run: readBytes = " + new String(readBytes));
                 onDataReceived(readBytes);
-
+                if(sleepTime>0){
+                    try {
+                        Thread.sleep(sleepTime);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             } catch (IOException e) {
                 e.printStackTrace();
                 return;
@@ -54,8 +62,8 @@ public abstract class SerialPortReadThread extends Thread {
         }
     }
 
-    @Override
-    public synchronized void start() {
+    public synchronized void start(long sleepTime) {
+        this.sleepTime = sleepTime;
         super.start();
     }
 
