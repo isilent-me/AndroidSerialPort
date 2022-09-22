@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidSerialPort.iml" filepath="$PROJECT_DIR$/AndroidSerialPort.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SerialPortLibrary/SerialPortLibrary.iml" filepath="$PROJECT_DIR$/SerialPortLibrary/SerialPortLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidSerialPort.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidSerialPort.iml" group="AndroidSerialPort" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SerialPortLibrary/SerialPortLibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/SerialPortLibrary/SerialPortLibrary.iml" group="AndroidSerialPort/SerialPortLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="AndroidSerialPort/app" />
     </modules>
   </component>
 </project>
