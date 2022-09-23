@@ -24,7 +24,7 @@ Step 2. Add the dependency
 
 ``` Gradle
 dependencies {
-        compile 'com.github.isilent-me:AndroidSerialPort:1.0.2'
+        implementation 'com.github.isilent-me:AndroidSerialPort:1.0.3'
 }
 ```
 
@@ -75,14 +75,25 @@ mSerialPortManager.setOnSerialPortDataListener(new OnSerialPortDataListener() {
 });
 ```
 
+### 设置receiveSleepTime，默认是0ms
+``` Java
+mSerialPortManager.setReceiveSleepTime(50);
+```
+
+### 设置readBufferSize，默认是1024
+``` Java
+mSerialPortManager.setReadBufferSize(2048);
+```
+
 ### 打开串口
 
 - 参数1：串口
 - 参数2：波特率
+- 参数3：flags （可选）
 - 返回：串口打开是否成功
 
 ``` Java
-boolean openSerialPort = mSerialPortManager.openSerialPort(device.getFile(), 115200);
+boolean openSerialPort = mSerialPortManager.openSerialPort(device.getFile(), 115200, 0);
 ```
 
 ### 发送数据
