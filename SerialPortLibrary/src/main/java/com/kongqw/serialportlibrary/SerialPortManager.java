@@ -180,6 +180,7 @@ public class SerialPortManager extends SerialPort {
         }
     }
     int receiveSleepTime=0;
+    int readBufferSize=1024;
 
     /**
      * 设置 receiveSleepTime，默认是0ms
@@ -190,10 +191,18 @@ public class SerialPortManager extends SerialPort {
     }
 
     /**
+     * 设置 readBufferSize，默认是1024
+     * @param readBufferSize
+     */
+    public void setReadBufferSize(int readBufferSize) {
+        this.readBufferSize = readBufferSize;
+    }
+
+    /**
      * 开启接收消息的线程
      */
     private void startReadThread() {
-        mSerialPortReadThread = new SerialPortReadThread(mFileInputStream) {
+        mSerialPortReadThread = new SerialPortReadThread(mFileInputStream, readBufferSize) {
             @Override
             public void onDataReceived(byte[] bytes) {
                 if (null != mOnSerialPortDataListener) {
