@@ -1,5 +1,8 @@
 # 说明
 
+基于 com.github.kongqw:AndroidSerialPort:1.0.1
+[源库地址](https://github.com/kongqw/AndroidSerialPort)
+
 [android-serialport-api](https://code.google.com/archive/p/android-serialport-api/)
 
 [![](https://jitpack.io/v/isilent-me/AndroidSerialPort.svg)](https://jitpack.io/#isilent-me/AndroidSerialPort)

@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         externalNativeBuild {
@@ -31,12 +31,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'androidx.appcompat:appcompat:1.0.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    testImplementation 'junit:junit:4.12'
 }
 
 afterEvaluate {
