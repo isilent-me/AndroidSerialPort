@@ -179,14 +179,14 @@ public class SerialPortManager extends SerialPort {
             mSendingHandlerThread = null;
         }
     }
-    long sleepTime=0;
+    int receiveSleepTime=0;
 
     /**
-     * 接收 sleep，默认是0ms
-     * @param sleepTime
+     * 设置 receiveSleepTime，默认是0ms
+     * @param receiveSleepTime
      */
-    public void setSleepTime(long sleepTime) {
-        this.sleepTime = sleepTime;
+    public void setReceiveSleepTime(int receiveSleepTime) {
+        this.receiveSleepTime = receiveSleepTime;
     }
 
     /**
@@ -201,7 +201,7 @@ public class SerialPortManager extends SerialPort {
                 }
             }
         };
-        mSerialPortReadThread.start(sleepTime);
+        mSerialPortReadThread.start(receiveSleepTime);
     }
 
     /**
